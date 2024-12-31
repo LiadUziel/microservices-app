@@ -2,11 +2,14 @@ import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 
 import { errorHandler } from "./controllers/error.controller";
+import commentRouter from "./routes/comment.route";
 
 const app = express();
 const PORT = 3001;
 
 app.use(bodyParser.json());
+
+app.use("/api", commentRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, TypeScript with Express!");
