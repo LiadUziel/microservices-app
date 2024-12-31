@@ -8,4 +8,6 @@ const commentRouter = Router();
 
 commentRouter.get("/post/:id/comment", getCommentsByPostId);
 
+commentRouter.post("/post/:id/comment", createCommentForPosts);
+
 export default commentRouter;
