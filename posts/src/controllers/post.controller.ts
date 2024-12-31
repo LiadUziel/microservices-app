@@ -5,17 +5,25 @@ import { posts } from "../data/posts";
 import { Post } from "../models/post.model";
 
 export const getAllPosts: RequestHandler = async (req, res, next) => {
-  res.status(200).send(posts);
+  try {
+    res.status(200).send(posts);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export const createPost: RequestHandler = async (req, res, next) => {
-  const id = uuidv4();
+  try {
+    const id = uuidv4();
 
-  const { title } = req.body;
+    const { title } = req.body;
 
-  const post: Post = { id, title };
+    const post: Post = { id, title };
 
-  // Add the new posts to the array
-  posts.push(post);
-  res.status(201).send(post);
+    // Add the new posts to the array
+    posts.push(post);
+    res.status(201).send(post);
+  } catch (err) {
+    next(err);
+  }
 };
