@@ -36,3 +36,13 @@
 # Comments Service
 /comments/node_modules
 /comments/dist
+
+
+########################################################
+
+# Event-bus Service
+/event-bus/node_modules
+/event-bus/dist
+
+
+
