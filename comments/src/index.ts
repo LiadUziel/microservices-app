@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 import { errorHandler } from "./controllers/error.controller";
@@ -8,6 +9,7 @@ const app = express();
 const PORT = 3001;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use("/api", commentRouter);
 
