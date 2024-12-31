@@ -21,6 +21,7 @@
 /client/*.njsproj
 /client/*.sln
 /client/*.sw?
+/client/.vite
 
 
 ########################################################
