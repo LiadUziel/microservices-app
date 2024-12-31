@@ -1,7 +1,10 @@
 import express, { Request, Response } from "express";
+import postRouter from "./routes/post.route";
 
 const app = express();
 const PORT = 3000;
+
+app.get("/api/post", postRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello, TypeScript with Express!");
