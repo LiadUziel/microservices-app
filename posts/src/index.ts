@@ -1,8 +1,12 @@
 import express, { Request, Response } from "express";
+import bodyParser from "body-parser";
+
 import postRouter from "./routes/post.route";
 
 const app = express();
 const PORT = 3000;
+
+app.use(bodyParser.json());
 
 app.use("/api/post", postRouter);
 
