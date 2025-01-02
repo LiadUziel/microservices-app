@@ -1,4 +1,6 @@
 import { RequestHandler } from "express";
+import axios from "axios";
+
 import { Comment } from "../models/comment.model";
 import { COMMENTS } from "../data/comments";
 
@@ -23,6 +25,13 @@ export const createCommentForPosts: RequestHandler = async (req, res, next) => {
 
     const comment: Comment = { postId, content };
     COMMENTS.push(comment);
+
+    await axios.post("http://localhost:3005/api/event", {
+      type: "CommentCreated",
+      data: {
+        ...comment,
+      },
+    });
 
     res.status(201).send(comment);
   } catch (err) {
