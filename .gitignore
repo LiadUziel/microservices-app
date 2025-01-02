@@ -51,5 +51,11 @@
 /query/node_modules
 /query/dist
 
+########################################################
+
+# Moderation Service
+/moderation/node_modules
+/moderation/dist
+
 
 
