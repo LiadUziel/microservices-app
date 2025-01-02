@@ -45,4 +45,11 @@
 /event-bus/dist
 
 
+########################################################
+
+# Query Service
+/query/node_modules
+/query/dist
+
+
 
