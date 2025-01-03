@@ -1,9 +1,11 @@
+import { Comment } from "./comment.model";
+
 export interface FullPost {
   id: string;
 
   title: string;
 
-  comments: { content: string }[];
+  comments: Comment[];
 }
 
 export interface FullPosts {

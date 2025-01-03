@@ -22,12 +22,12 @@ export const receiveEvent: RequestHandler = async (req, res, next) => {
     }
 
     if (type === "CommentCreated") {
-      const { postId, content } = data;
+      const { postId, id, content, status } = data;
 
       const post = FULL_POSTS[postId];
 
       // Add new comment to relevant post
-      post.comments.push({ content });
+      post.comments.push({ id, content, status });
     }
 
     res.send({});
