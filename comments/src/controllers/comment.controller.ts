@@ -18,7 +18,7 @@ export const getCommentsByPostId: RequestHandler = async (req, res, next) => {
   }
 };
 
-export const createCommentForPosts: RequestHandler = async (req, res, next) => {
+export const createCommentForPost: RequestHandler = async (req, res, next) => {
   try {
     const postId = req.params.id;
     const { content } = req.body;
