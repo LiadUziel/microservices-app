@@ -10,6 +10,15 @@ export const receiveEvent: RequestHandler = async (req, res, next) => {
       data
     );
 
+    if (type === "CommentModerated") {
+      // const { id, postId, status } = data;
+      // const relevantComments = COMMENTS_BY_POST_ID.filter(
+      //   (comment) => comment.postId === postId
+      // );
+      // const comment = relevantComments.find((comment) => comment.id === id)!;
+      // comment.status = status;
+    }
+
     res.send({});
   } catch (err) {
     next(err);
