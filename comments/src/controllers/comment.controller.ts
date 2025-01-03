@@ -23,17 +23,19 @@ export const createCommentForPost: RequestHandler = async (req, res, next) => {
     const postId = req.params.id;
     const { content } = req.body;
 
-    const comment: Comment = { postId, content };
-    COMMENTS.push(comment);
+    const id = uuidv4().slice(0, 8);
+    const newComment: Comment = { id, content, status: "pending" };
+    comments.push(newComment);
 
     await axios.post("http://localhost:3005/api/event", {
       type: "CommentCreated",
       data: {
-        ...comment,
+        ...newComment,
+        postId,
       },
     });
 
-    res.status(201).send(comment);
+    res.status(201).send(newComment);
   } catch (err) {
     next(err);
   }
