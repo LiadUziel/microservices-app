@@ -1,9 +1,13 @@
 import axios from "axios";
 import { RequestHandler } from "express";
 
+import { EVENTS } from "../data/events";
+
 export const createEvent: RequestHandler = async (req, res, next) => {
   try {
     const event = req.body;
+
+    EVENTS.push(event);
 
     axios
       .post("http://localhost:3000/api/event", event)
@@ -19,6 +23,14 @@ export const createEvent: RequestHandler = async (req, res, next) => {
       .catch((err) => console.log(err.message));
 
     res.send({ status: "OK" });
+  } catch (err) {
+    next(err);
+  }
+};
+
+export const getEvents: RequestHandler = async (req, res, next) => {
+  try {
+    res.send(EVENTS);
   } catch (err) {
     next(err);
   }
