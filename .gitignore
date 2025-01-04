@@ -36,3 +36,26 @@
 # Comments Service
 /comments/node_modules
 /comments/dist
+
+
+########################################################
+
+# Event-bus Service
+/event-bus/node_modules
+/event-bus/dist
+
+
+########################################################
+
+# Query Service
+/query/node_modules
+/query/dist
+
+########################################################
+
+# Moderation Service
+/moderation/node_modules
+/moderation/dist
+
+
+
