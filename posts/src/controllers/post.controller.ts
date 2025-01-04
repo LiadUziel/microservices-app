@@ -15,7 +15,7 @@ export const getAllPosts: RequestHandler = async (req, res, next) => {
 
 export const createPost: RequestHandler = async (req, res, next) => {
   try {
-    const id = uuidv4();
+    const id = uuidv4().slice(0, 8);
 
     const { title } = req.body;
 
