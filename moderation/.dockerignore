@@ -1,0 +1,41 @@
+# Ignore node_modules (dependencies are installed in the container)
+node_modules
+
+# Ignore TypeScript build output (dist/ or build/)
+dist
+build
+
+# Ignore local environment files (important for security)
+.env
+.env.local
+
+# Ignore log files
+*.log
+logs
+
+# Ignore editor or IDE configuration files
+.vscode
+.idea
+*.swp
+
+# Ignore Docker-related files that don't need to be in the image
+Dockerfile
+docker-compose.yml
+
+# Ignore test-related files and folders
+__tests__
+*.spec.ts
+*.test.ts
+coverage
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore git files
+.git
+.gitignore
+
+# Ignore other unnecessary files (e.g., temporary files)
+*.tmp
+*.temp
